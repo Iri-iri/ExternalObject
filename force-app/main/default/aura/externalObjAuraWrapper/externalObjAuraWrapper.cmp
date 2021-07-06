@@ -1,0 +1,10 @@
+<aura:component implements="force:hasRecordId,flexipage:availableForRecordHome">
+    <aura:attribute name="recordId" type="Id" access="public"/>
+    <aura:handler event="force:showToast" action="{!c.onShowToastEvent}"/>
+
+    <c:externalComponent aura:id="nestedComponent"
+                         recordId="{!v.recordId}"
+                         oncreaterecord="{!c.onLWCEvent}"
+                         onupdaterecord="{!c.onLWCEventUpdate}"
+    />
+</aura:component>
